@@ -52,7 +52,6 @@ script_paths=(
     ./scripts
 )
 
-
 hot_list_length=(
     5000
 )
@@ -61,29 +60,16 @@ warm_list_length=(
     20000
 )
 
-small_scale=(
-    2
-    4
-    8
+# Define specific combinations of small, medium, and large scale values
+combinations=(
+    "4 16 128"
+    "8 16 128"
+    "8 32 128"
+    "2 16 256"
+    # Add other combinations as needed
 )
 
-medium_scale=(
-    8
-    16
-    32
-)
-
-large_scale=(
-    # 32
-    # 64
-    # 128
-    256
-    512
-)
-
-
-for trace_path in ${trace_paths[@]};
-do
+for trace_path in ${trace_paths[@]}; do
     full_path="$root_path/$trace_path"
     full_script_path="$root_path/$script_paths"
     cd $full_path
@@ -112,12 +98,9 @@ do
             fi
             result_dir="${result_dir}/list_length_${hot_length}_${warm_length}"
             cd "${result_dir}"
-            for window_size in "${small_scale[@]}"; do
-                for medium_window_size in "${medium_scale[@]}"; do
-                    for large_window_size in "${large_scale[@]}"; do
-                        replay_trace $window_size $medium_window_size $large_window_size
-                    done
-                done
+            for combination in "${combinations[@]}"; do
+                read -r window_size medium_window_size large_window_size <<< "$combination"
+                replay_trace $window_size $medium_window_size $large_window_size
             done
             replay_trace 32 32 32 # baseline
             cd "${full_path}"

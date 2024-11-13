@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Root directory path
-root_dir="/Users/zeltrxn/ETH/Safari/results/Adriane/FinalEvaluation/AppTrace"
+root_dir=$(pwd)
 # List of application directories
 app_dirs=(
     "./youtube"

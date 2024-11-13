@@ -26,8 +26,8 @@ def main():
 
     hot_list_length = int(sys.argv[1])
     warm_list_length = int(sys.argv[2])
-    print(f"hot_list_length: {hot_list_length}")
-    print(f"warm_list_length: {warm_list_length}")
+    # print(f"hot_list_length: {hot_list_length}")
+    # print(f"warm_list_length: {warm_list_length}")
     # List to store the extracted numbers for each file
     # Process each line in the log file 
     for app_id in app_ids:
@@ -121,8 +121,8 @@ def main():
     compression_file.close()
 
 
-    print(f"len(lru_pfn_numbers): {len(lru_pfn_numbers)}")
-    print(f"len(swapout_appid_numbers): {len(swapout_appid_numbers)}")
+    # print(f"len(lru_pfn_numbers): {len(lru_pfn_numbers)}")
+    # print(f"len(swapout_appid_numbers): {len(swapout_appid_numbers)}")
     # print(f"len(set(lru_pfn_numbers)): {len(set(lru_pfn_numbers))}")
 
 if __name__ == "__main__":
