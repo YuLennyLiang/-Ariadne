@@ -10,6 +10,7 @@ app_dirs=(
     "./firefox"
     "./bangdream"
 )
+echo '' > ${root_dir}/cov_acc_result.txt
 # Loop through each application directory
 for app_dir in "${app_dirs[@]}"; do
     # Construct full directory path
@@ -21,7 +22,7 @@ for app_dir in "${app_dirs[@]}"; do
     # Check if directory change was successful
     if [ $? -eq 0 ]; then
         # echo "Working in directory: ${full_path}"
-        ./collect_result.sh
+        ./collect_result.sh >> ${root_dir}/cov_acc_result.txt
     else
         echo "Failed to change directory to ${full_path}"
     fi
