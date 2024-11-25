@@ -3,13 +3,13 @@
 
 
 # Collect Evaluation Results
-First of all, please go to dir contained traces
+First of all, please go to dir contained traces.
 ```
 cd AppTrace
 ```
 ## Coverage and Accuracy Results 
 
-Run commands below to get our hot data prediction coverage and accuaray
+Run commands below to get our hot data prediction coverage and accuaray.
 ```
 ./get_cov_acc.sh
 ```
@@ -17,12 +17,13 @@ The result will be in ```cov_acc_result.txt``` inside AppTrace dir.
 
 ## Replay Trace
 
-You can replay our collected trace using
+You can replay our collected trace on smart phone using
 ```
 ./replay_app_trace.sh
 ```
+This will generate evaluaiton result which is collected on real smart phone.
 
-## Extract Other Evaluation Results 
+## Extract Evaluation Results 
 ```
 ./get_eva_result.sh
 ```
