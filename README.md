@@ -41,7 +41,7 @@ fastboot reboot
 
 3. When modifying the source code of the kernel, only the codes stored in `private/gs_google` directory will work after flashing you custom kernel. Otherwise, you modifcation won't work.
 
-4. You can refer to code dir `gs_google` of this repo and make changes correctly to build the kernel.
+4. You can refer to code dir `gs_google` of this repo and make changes correctly to build the kernel which can collect and run the traces. We have already provided a smart phone with kernel built and flashed.
 
 
 # Collect Evaluation Results
