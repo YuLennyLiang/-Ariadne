@@ -4,19 +4,23 @@
 
 1. Download the Pixel 7 Pro's kernel source codes
 ```shell
+mkdir /pixel7-kernel
+cd /pixel7-kernel
 repo init -u https://android.googlesource.com/kernel/manifest -b android-gs-pantah-5.10-android14
 repo sync
 ```
 
 2. Go to the directory of the source code, then input 
 ```shell
-rm -rf /mnt/Pixel7/android-kernel/out/mixed/dist/* # clear previous generated files
-BUILD_AOSP_KERNEL=1 SKIP_MRPROPER=1 ./build_cloudripper.sh       # cloud ripper indicates Pixel 7 Pro
+rm -rf /pixel7-kernel/android-kernel/out/android13-gs-pixel-5.10/dist/* # clear previous generated files
+# cloudripper is another codename for pixel 7.
+# Change it to correct one for your pixel
+BUILD_CONFIG=private/gs-google/build.config.cloudripper build/build.sh
 ```
 
-3. Compiled files are generated and stroed in `/home/hubery/mywork/pollor/pixel7-kernel/out/mixed/dist/`, then we can flash them into the kernel
+3. Compiled files are generated and stroed in `/pixel7-kernel/out/android13-gs-pixel-5.10/dist/`, then we can flash them into the kernel
 ```shell
-cd /mnt/Pixel7/android-kernel/out/mixed/dist/
+cd /pixel7-kernel/android-kernel/out/android13-gs-pixel-5.10/dist/
 
 adb reboot bootloader
 fastboot oem disable-verification
@@ -35,9 +39,9 @@ fastboot flash system_dlkm system_dlkm.img
 fastboot reboot
 ```
 
-3. When modifying the source code of the kernel, only the codes stored in `aosp` directory will work after flashing you custom kernel. Otherwise, you modifcation won't work.
+3. When modifying the source code of the kernel, only the codes stored in `private/gs_google` directory will work after flashing you custom kernel. Otherwise, you modifcation won't work.
 
-
+4. You can refer to code dir `gs_google` of this repo and make changes correctly to build the kernel.
 
 
 # Collect Evaluation Results
