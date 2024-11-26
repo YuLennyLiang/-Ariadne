@@ -1,6 +1,6 @@
 # -Ariadne
 
-# This markdown introduces how to download and flash kernel for Pixel 7
+# Download and flash kernel for Pixel 7
 
 1. Download the Pixel 7 Pro's kernel source codes
 ```shell
