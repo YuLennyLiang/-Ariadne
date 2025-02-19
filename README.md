@@ -16,9 +16,13 @@ Our experimental evaluation results show that, on average, Ariadne reduces appli
 
 ## Overview of Ariadne.
 
+Ariadne is a new compressed swap scheme for mobile devices that reduces application relaunch latency and CPU usage while increasing the number of live applications for enhanced user experience. The key idea of Ariadne is to reduce the frequency and latency of compression, decompression, swap-in, and swap-out operations by leveraging different compression chunk sizes based on the hotness level of the data, while also performing speculative decompression based on data locality characteristics.
+
 <p align="center">
   <img src="overview.png" alt="drawing" width="400"/>
 </p>
+
+We use colors to represent the hotness levels of data pages: red for hot, orange for warm, and blue for cold data. In Android systems, anonymous data of running applications can be stored in main memory,  zpool, or flash memory-based swap space. Main memory has the lowest access latency, while flash memory-based swap space has the highest. Therefore, systems usually prioritize storing anonymous data in main memory for best performance. When main memory capacity is limited, systems use the ZRAM scheme to compress the least recently used LRU data into zpool. The flash memory-based swap space serves as main memory extension to store compressed data swapped out from  zpool when there is insufficient main memory space. Ariadne chooses to swap out compressed data, which leads to smaller writes to flash memory and lower storage space consumption.  However, this design choice may increase read latency due to decompression. We reduce the probability of incurring such latency by mainly writing cold data (that is unlikely to be read again) into the flash swap space. 
 
 ## Citation
 If you find this repo useful, please cite the following paper:
