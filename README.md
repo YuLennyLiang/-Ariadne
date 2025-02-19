@@ -1,6 +1,6 @@
 # Ariadne: A Hotness-Aware and Size-Adaptive Compressed Swap Technique for Fast Application Relaunch and Reduced CPU Usage on Mobile Devices
 
-## Why do we need Ariadne?
+# Why do we need Ariadne?
 
 As the memory demands of individual mobile applications continue to grow and the number of concurrently running applications increases, available memory on mobile devices is becoming increasingly scarce. When memory pressure is high, current mobile systems use a RAM-based compressed swap scheme (called ZRAM) to compress unused execution-related data (called anonymous data in Linux) in main memory. 
 
@@ -14,7 +14,7 @@ Third, a proactive decompression scheme predicts the next set of data to be used
 We implement and evaluate Ariadne on a commercial smartphone, Google Pixel 7 with the latest Android 14.
 Our experimental evaluation results show that, on average, Ariadne reduces application relaunch latency by 50% and decreases the CPU usage of compression and decompression procedures by 15% compared to the state-of-the-art compressed swap scheme for mobile devices.
 
-## What is Ariadne?
+# What is Ariadne?
 
 Ariadne is a new compressed swap scheme for mobile devices that reduces application relaunch latency and CPU usage while increasing the number of live applications for enhanced user experience. The key idea of Ariadne is to reduce the frequency and latency of compression, decompression, swap-in, and swap-out operations by leveraging different compression chunk sizes based on the hotness level of the data, while also performing speculative decompression based on data locality characteristics.
 
@@ -44,8 +44,8 @@ Yu Liang, Aofeng Shen, Chun Jason Xue, Riwei Pan, Haiyu Mao, Nika Mansouri Ghias
 }
 ```
 ## Table of Contents
-  * [Why do we need Ariadne?](##why-do-we-need-Ariadne?)
-  * [What is Ariadne?](##what-is-Ariadne?)
+  * [Why do we need Ariadne?](#Why-do-we-need-Ariadne?)
+  * [What is Ariadne?](#what-is-Ariadne?)
   * [Citation](#citation)
   * [Prerequisites](#donwload-and-flash-kernel-for-Pixel-7)
   * [Collect Evaluation Results](#collect-evaluation-results)
