@@ -17,7 +17,7 @@ Our experimental evaluation results show that, on average, Ariadne reduces appli
 ## Overview of Ariadne.
 
 <p align="center">
-  <img src="overview.pdf" alt="drawing" width="400"/>
+  <img src="overview.png" alt="drawing" width="400"/>
 </p>
 
 ## Citation
