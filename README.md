@@ -17,7 +17,7 @@ Our experimental evaluation results show that, on average, Ariadne reduces appli
 ## Overview of Ariadne.
 
 <p align="center">
-  <img src="overview.png" alt="drawing" width="400"/>
+  <img src="overview.pdf" alt="drawing" width="400"/>
 </p>
 
 ## Citation
@@ -25,7 +25,7 @@ If you find this repo useful, please cite the following paper:
 Yu Liang, Aofeng Shen, Chun Jason Xue, Riwei Pan, Haiyu Mao, Nika Mansouri Ghiasi, Qingcai Jiang, Rakesh Nadig, Lei Li, Rachata Ausavarungnirun, Mohammad Sadrosadati, Onur Mutlu, ["Ariadne: A Hotness-Aware and Size-Adaptive Compressed Swap Technique for Fast Application Relaunch and Reduced CPU Usage on Mobile Devices"](https://arxiv.org/abs/2502.12826), 2025 IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2025.
 
 ```bibtex
-@misc{liang2025ariadnehotnessawaresizeadaptivecompressed,
+@misc{liang2025ariadne,
       title={Ariadne: A Hotness-Aware and Size-Adaptive Compressed Swap Technique for Fast Application Relaunch and Reduced CPU Usage on Mobile Devices}, 
       author={Yu Liang and Aofeng Shen and Chun Jason Xue and Riwei Pan and Haiyu Mao and Nika Mansouri Ghiasi and Qingcai Jiang and Rakesh Nadig and Lei Li and Rachata Ausavarungnirun and Mohammad Sadrosadati and Onur Mutlu},
       year={2025},
