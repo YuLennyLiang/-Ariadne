@@ -14,6 +14,35 @@ Third, a proactive decompression scheme predicts the next set of data to be used
 We implement and evaluate Ariadne on a commercial smartphone, Google Pixel 7 with the latest Android 14.
 Our experimental evaluation results show that, on average, Ariadne reduces application relaunch latency by 50% and decreases the CPU usage of compression and decompression procedures by 15% compared to the state-of-the-art compressed swap scheme for mobile devices.
 
+## Overview of Ariadne.
+
+<p align="center">
+  <img src="overview.png" alt="drawing" width="400"/>
+</p>
+
+## Citation
+If you find this repo useful, please cite the following paper:
+Yu Liang, Aofeng Shen, Chun Jason Xue, Riwei Pan, Haiyu Mao, Nika Mansouri Ghiasi, Qingcai Jiang, Rakesh Nadig, Lei Li, Rachata Ausavarungnirun, Mohammad Sadrosadati, Onur Mutlu, ["Ariadne: A Hotness-Aware and Size-Adaptive Compressed Swap Technique for Fast Application Relaunch and Reduced CPU Usage on Mobile Devices"](https://arxiv.org/abs/2502.12826), 2025 IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2025.
+
+```bibtex
+@misc{liang2025ariadnehotnessawaresizeadaptivecompressed,
+      title={Ariadne: A Hotness-Aware and Size-Adaptive Compressed Swap Technique for Fast Application Relaunch and Reduced CPU Usage on Mobile Devices}, 
+      author={Yu Liang and Aofeng Shen and Chun Jason Xue and Riwei Pan and Haiyu Mao and Nika Mansouri Ghiasi and Qingcai Jiang and Rakesh Nadig and Lei Li and Rachata Ausavarungnirun and Mohammad Sadrosadati and Onur Mutlu},
+      year={2025},
+      eprint={2502.12826},
+      archivePrefix={arXiv},
+      primaryClass={cs.OS},
+      url={https://arxiv.org/abs/2502.12826}, 
+}
+```
+## Table of Contents
+
+  * [What is Ariadne?](#what-is-Ariadne)
+  * [Citation](#citation)
+  * [Prerequisites](#donwload-and-flash-kernel-for-Pixel-7)
+  * [Collect-Evaluation-Results](#collect-evaluation-results)
+  * [Contact](#contact)
+
 # Download and flash kernel for Pixel 7
 
 1. Download the Pixel 7 Pro's kernel source codes
@@ -84,3 +113,7 @@ This will generate evaluaiton result which is collected on real smart phone.
 ./get_eva_result.sh
 ```
 The result will be in ```final_result.txt``` inside AppTrace dir.
+
+## Contact
+
+Yu Liang - yulianglenny@gmail.com
