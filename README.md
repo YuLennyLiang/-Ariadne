@@ -14,7 +14,7 @@ Third, a proactive decompression scheme predicts the next set of data to be used
 We implement and evaluate Ariadne on a commercial smartphone, Google Pixel 7 with the latest Android 14.
 Our experimental evaluation results show that, on average, Ariadne reduces application relaunch latency by 50% and decreases the CPU usage of compression and decompression procedures by 15% compared to the state-of-the-art compressed swap scheme for mobile devices.
 
-## Overview of Ariadne.
+### Overview of Ariadne.
 
 Ariadne is a new compressed swap scheme for mobile devices that reduces application relaunch latency and CPU usage while increasing the number of live applications for enhanced user experience. The key idea of Ariadne is to reduce the frequency and latency of compression, decompression, swap-in, and swap-out operations by leveraging different compression chunk sizes based on the hotness level of the data, while also performing speculative decompression based on data locality characteristics.
 
@@ -23,6 +23,10 @@ Ariadne is a new compressed swap scheme for mobile devices that reduces applicat
 </p>
 
 We use colors to represent the hotness levels of data pages: red for hot, orange for warm, and blue for cold data. In Android systems, anonymous data of running applications can be stored in main memory,  zpool, or flash memory-based swap space. Main memory has the lowest access latency, while flash memory-based swap space has the highest. Therefore, systems usually prioritize storing anonymous data in main memory for best performance. When main memory capacity is limited, systems use the ZRAM scheme to compress the least recently used LRU data into zpool. The flash memory-based swap space serves as main memory extension to store compressed data swapped out from  zpool when there is insufficient main memory space. Ariadne chooses to swap out compressed data, which leads to smaller writes to flash memory and lower storage space consumption.  However, this design choice may increase read latency due to decompression. We reduce the probability of incurring such latency by mainly writing cold data (that is unlikely to be read again) into the flash swap space. 
+
+Based on the above data storage architecture, Ariadne incorporates three techniques: First, Ariadne uses a low-overhead, hotness-aware data organization mechanism, called \dataorg, to determine data hotness and maintain data with different levels of hotness in separate memory page lists accordingly. The goal of \dataorg is to reduce the frequency of compression/decompression and swap-in/swap-out operations. To achieve this goal, Ariadne aims to maintain uncompressed hot data in main memory,  compress warm data into zpool, and swap compressed cold data to the flash memory-based swap space.
+Second, Ariadne enables a size-adaptive compression mechanism, called \compress, to leverage the benefits of different compression chunk sizes. The goal of  \compress is to achieve both short relaunch latency and a good compression ratio by using small-size compression chunks for identified warm data and large-size compression chunks for cold data. 
+Third, rather than relying on on-demand decompression or data swapping-in operations during application relaunches, Ariadne employs a proactive and predictive decompression (i.e., predecompression) mechanism, called \predi, that leverages data locality to proactively determine the best data and timing for compression and swapping. The goal of \predi is to mitigate the negative impact of read latency on the user experience. 
 
 ## Citation
 If you find this repo useful, please cite the following paper:
