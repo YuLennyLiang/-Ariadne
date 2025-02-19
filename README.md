@@ -44,8 +44,8 @@ Yu Liang, Aofeng Shen, Chun Jason Xue, Riwei Pan, Haiyu Mao, Nika Mansouri Ghias
 }
 ```
 ## Table of Contents
-  * [Why do we need Ariadne?](#Why-do-we-need-Ariadne-)
-  * [What is Ariadne?](#what-is-Ariadne-)
+  * [Why do we need Ariadne?](#Why-do-we-need-ariadne-)
+  * [What is Ariadne?](#what-is-ariadne-)
   * [Citation](#citation)
   * [Prerequisites](#download-and-flash-kernel-for-Pixel-7)
   * [Collect Evaluation Results](#collect-evaluation-results)
